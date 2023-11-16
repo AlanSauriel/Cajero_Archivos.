@@ -1,4 +1,3 @@
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -46,13 +45,12 @@ class CajeroAutomático {
         billetes.put("1000", 10);
         guardarBilletes();
     }
-
     public void consultarSaldo(Usuario usuario) {
         System.out.println("Saldo actual de " + usuario.getNombre() + ": $" + usuario.getSaldo());
     }
 
     public boolean retirarEfectivo(Usuario usuario, int cantidad) {
-        int montoMinimo = Math.min(usuario.getSaldo(), calcularMontoMinimoBilletes());
+int montoMinimo = Math.min(usuario.getSaldo(), calcularMontoMinimoBilletes());
         System.out.println("Monto mínimo a retirar: $" + montoMinimo);
 
         if (cantidad > usuario.getSaldo() || cantidad > montoMinimo) {
@@ -94,4 +92,4 @@ class CajeroAutomático {
         return cantidad / Integer.parseInt(denominacion);
     }
 }
-
+    
